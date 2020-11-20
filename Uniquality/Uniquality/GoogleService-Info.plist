@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>153417066885-a1no1jfvfnnv89srta1be3btbinpursn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.153417066885-a1no1jfvfnnv89srta1be3btbinpursn</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD4zlm-7TncExF4bZp9m7BV6X8Aluxcyuc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>153417066885</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.abugaev.uniquality</string>
+	<key>PROJECT_ID</key>
+	<string>uniquality-1c8ca</string>
+	<key>STORAGE_BUCKET</key>
+	<string>uniquality-1c8ca.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:153417066885:ios:5d6afe80e74ca5d300fcec</string>
+	<key>DATABASE_URL</key>
+	<string>https://uniquality-1c8ca.firebaseio.com</string>
+</dict>
+</plist>
