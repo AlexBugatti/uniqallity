@@ -45,8 +45,8 @@ class NotesViewController: UIViewController {
         let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         API.getNotes { (notes) in
             hud.hide(animated: true)
-            Storage.shared.notes = notes
-            self.notes = notes
+            Storage.shared.notes = notes.sorted(by: { $0.date > $1.date })
+            self.notes = notes.sorted(by: { $0.date > $1.date })
         }
     }
     

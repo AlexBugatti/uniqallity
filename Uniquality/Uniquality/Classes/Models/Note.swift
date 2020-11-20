@@ -12,6 +12,7 @@ class Note {
 
     var note: String
     var username: String
+    var date: Int
     
     var md5: [String] = []
     var sha1: [String] = []
@@ -20,7 +21,8 @@ class Note {
         return ["note": note,
                 "username": username,
                 "md5": md5,
-                "sha1": sha1]
+                "sha1": sha1,
+                "date": date]
     }
     
     
@@ -29,11 +31,13 @@ class Note {
         self.username = username
         self.md5 = md5
         self.sha1 = sha1
+        self.date = Int(Date().timeIntervalSince1970)
     }
     
     init?(from map: [String: Any]) {
         guard let note = map["note"] as? String,
-              let username = map["username"] as? String else {
+              let username = map["username"] as? String,
+              let date = map["date"] as? Int else {
             return nil
         }
         
@@ -45,6 +49,7 @@ class Note {
         }
         self.note = note
         self.username = username
+        self.date = date
     }
     
     func isEqual(note: Note) -> CGFloat {
