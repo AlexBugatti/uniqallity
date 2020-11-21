@@ -46,14 +46,33 @@ extension String {
     }
     
     func getShingles(crypt: Crypt) -> [String] {
-        switch crypt {
-            case .sha1:
-                let strings = self.components(separatedBy: " ").compactMap({ $0.sha1() })
-                return strings
-            case .md5:
-                let strings = self.components(separatedBy: " ").compactMap({ $0.md5() })
-                return strings
+        
+        let words = self.components(separatedBy: " ")
+        var shingles: [String] = []
+        
+        for (index, _) in words.enumerated() {
+            
+            if words.count - Constants.shingleLenght >= index {
+                
+                var substrings: [String] = []
+                for i in index..<(index+Constants.shingleLenght) {
+                    substrings.append(words[i])
+                }
+                
+                switch crypt {
+                    case .sha1:
+                        let strings = substrings.compactMap({ $0.sha1() })
+                        shingles.append(contentsOf: strings)
+                    case .md5:
+                        let strings = substrings.compactMap({ $0.md5() })
+                        shingles.append(contentsOf: strings)
+                }
+                
+            }
+            
         }
+        
+        return shingles
     }
     
 }

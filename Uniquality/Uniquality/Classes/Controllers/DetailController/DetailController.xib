@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailController" customModule="Uniquality" customModuleProvider="target">
             <connections>
+                <outlet property="compareButton" destination="DWg-Id-bg7" id="1k0-1D-Ng4"/>
                 <outlet property="textView" destination="2S7-BI-IN9" id="KgX-28-JoA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,28 +22,58 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2S7-BI-IN9">
-                    <rect key="frame" x="8" y="0.0" width="398" height="766"/>
+                    <rect key="frame" x="8" y="0.0" width="398" height="724"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <color key="textColor" systemColor="labelColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NsO-oD-29C">
+                    <rect key="frame" x="0.0" y="724" width="414" height="84"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWg-Id-bg7">
+                            <rect key="frame" x="8" y="8" width="398" height="34"/>
+                            <color key="backgroundColor" systemColor="linkColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="Сравнить с другими">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onDidCompareTapped:" destination="-1" eventType="touchUpInside" id="PCt-9j-tV5"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.84055685999999996" green="0.84778290990000005" blue="0.86686879400000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="DWg-Id-bg7" firstAttribute="top" secondItem="NsO-oD-29C" secondAttribute="top" constant="8" id="JAP-RD-3Yv"/>
+                        <constraint firstAttribute="trailing" secondItem="DWg-Id-bg7" secondAttribute="trailing" constant="8" id="gbz-p6-7Dz"/>
+                        <constraint firstItem="DWg-Id-bg7" firstAttribute="leading" secondItem="NsO-oD-29C" secondAttribute="leading" constant="8" id="m5s-h4-8ai"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="DWg-Id-bg7" secondAttribute="bottom" constant="8" id="2ym-2n-WHj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2S7-BI-IN9" secondAttribute="trailing" constant="8" id="5vp-z4-phN"/>
+                <constraint firstItem="NsO-oD-29C" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-50" id="Cf9-yH-DsR"/>
                 <constraint firstItem="2S7-BI-IN9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="Y3C-Ke-hjE"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="2S7-BI-IN9" secondAttribute="bottom" constant="8" id="fDn-SU-tVR"/>
+                <constraint firstItem="NsO-oD-29C" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="my1-92-Wct"/>
                 <constraint firstItem="2S7-BI-IN9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ofq-UB-Zda"/>
+                <constraint firstItem="NsO-oD-29C" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pKb-Jl-KTI"/>
+                <constraint firstAttribute="bottom" secondItem="NsO-oD-29C" secondAttribute="bottom" id="y2e-TG-han"/>
+                <constraint firstItem="NsO-oD-29C" firstAttribute="top" secondItem="2S7-BI-IN9" secondAttribute="bottom" id="y5y-E1-7hg"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-            <point key="canvasLocation" x="138" y="52"/>
+            <point key="canvasLocation" x="137.68115942028987" y="51.5625"/>
         </view>
     </objects>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -12,6 +12,7 @@ class DetailController: UIViewController {
 
     var note: Note
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var compareButton: UIButton!
     
     init(note: Note) {
         self.note = note
@@ -30,6 +31,17 @@ class DetailController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func onDidCompareTapped(_ sender: Any) {
+        var uniqs: [Uniq] = []
+        for not in Storage.shared.notes {
+            let uniq = Uniq(title: not.note, percent: note.isEqual(note: not))
+            uniqs.append(uniq)
+        }
+        
+        let vc = PresentUniqueController(uniqs: uniqs)
+        self.present(vc, animated: true, completion: nil)
+    }
+    
 
     /*
     // MARK: - Navigation
